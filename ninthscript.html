@@ -1,0 +1,203 @@
+<html>
+<script>
+
+function toString(){
+  var number = parseInt(window.document.form.input.value);
+  window.document.form.result.value = change(number);
+}
+
+function change(number){
+  var digit = "";
+  var tens = "";
+  var hundreds = "";
+  var thousands = "";
+  while (number !=0){
+    if (number < 10000 && number >= 1000){
+      switch (Math.floor(number/1000)){
+        case 1:
+        thousands = "one thousand";
+        break;
+        case 2:
+        thousands = "two thousand";
+        break;
+        case 3:
+        thousands = "three thousand";
+        break;
+        case 4:
+        thousands = "four thousand";
+        break;
+        case 5:
+        thousands = "five thousand";
+        break;
+        case 6:
+        thousands = "six thousand";
+        break;
+        case 7:
+        thousands = "seven thousand";
+        break;
+        case 8:
+        thousands = "eight thousand";
+        break;
+        case 9:
+        thousands = "nine thousand";
+        break;
+      }
+      number = number - (Math.floor(number/1000))*1000;
+    }
+
+    else if (number <1000 && number >= 100){
+      switch (Math.floor(number/100)){
+        case 1:
+        hundreds = "one hundred";
+        break;
+        case 2:
+        hundreds = "two hundred";
+        break;
+        case 3:
+        hundreds = "three hundred";
+        break;
+        case 4:
+        hundreds = "four hundred";
+        break;
+        case 5:
+        hundreds = "five hundred";
+        break;
+        case 6:
+        hundreds = "six hundred";
+        break;
+        case 7:
+        hundreds = "seven hundred";
+        break;
+        case 8:
+        hundreds = "eight hundred";
+        break;
+        case 9:
+        hundreds = "nine hundred";
+        break;
+      }
+      number = number - (Math.floor(number/100))*100;
+    }
+
+    else if (number <100 && number >=20){
+      switch (Math.floor(number/10)){
+        case 2:
+        tens = "twenty";
+        break;
+        case 3:
+        tens = "thirty";
+        break;
+        case 4:
+        tens = "forty";
+        break;
+        case 5:
+        tens = "fifty";
+        break;
+        case 6:
+        tens = "sixty";
+        break;
+        case 7:
+        tens = "seventy";
+        break;
+        case 8:
+        tens = "eighty";
+        break;
+        case 9:
+        tens = "ninety";
+        break;
+      }
+      number = number - (Math.floor(number/10))*10;
+    }
+
+    else if (number < 20){
+      switch (number){
+        case 1:
+        digit = "one";
+        number = number - 1;
+        break;
+        case 2:
+        digit = "two";
+        number = number - 2;
+        break;
+        case 3:
+        digit = "three";
+        number = number - 3;
+        break;
+        case 4:
+        digit = "four";
+        number = number - 4;
+        break;
+        case 5:
+        digit = "five";
+        number = number - 5;
+        break;
+        case 6:
+        digit = "six";
+        number = number - 6;
+        break;
+        case 7:
+        digit = "seven";
+        number = number - 7;
+        break;
+        case 8:
+        digit = "eight";
+        number = number - 8;
+        break;
+        case 9:
+        digit = "nine";
+        number = number - 9;
+        break;
+        case 10:
+        digit = "ten";
+        number = number - 10;
+        break;
+        case 11:
+        digit = "eleven";
+        number = number - 11;
+        break;
+        case 12:
+        digit = "twelve";
+        number = number - 12;
+        break;
+        case 13:
+        digit = "thirteen";
+        number = number - 13;
+        break;
+        case 14:
+        digit = "fourteen";
+        number = number - 14;
+        break;
+        case 15:
+        digit = "fifteen";
+        number = number - 15;
+        break;
+        case 16:
+        digit = "sixteen";
+        number = number - 16;
+        break;
+        case 17:
+        digit = "seventeen";
+        number = number - 17;
+        break;
+        case 18:
+        digit = "eighteen";
+        number = number - 18;
+        break;
+        case 19:
+        digit = "nineteen";
+        number = number - 19;
+        break;
+      }
+    }
+  }
+  var finalString = thousands + " " + hundreds + " " + tens + " " + digit;
+  return finalString.trim();
+}
+
+</script>
+
+<form name= "form">
+  Number: <input name = "input" />
+  <input type = "button" value = "Change" onclick="toString()" />
+  <input name = "result" />
+</form>
+</html>

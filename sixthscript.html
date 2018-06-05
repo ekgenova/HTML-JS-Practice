@@ -1,0 +1,26 @@
+<HTML>
+  <SCRIPT>
+  function addition(){
+    if (window.document.FRM.FIRST.value == ""){
+      window.alert("First number is missing!");
+      window.document.FRM.FIRST.focus();
+    }
+    else if (window.document.FRM.SECOND.value == ""){
+      window.alert("Second number is missing!");
+      window.document.FRM.SECOND.focus();
+    }
+    else {
+      var A = parseInt(window.document.FRM.FIRST.value);
+      var B = parseInt(window.document.FRM.SECOND.value);
+      var result = A + B;
+      window.document.FRM.RESULT.value = result;
+    }
+  }
+</SCRIPT>
+<FORM NAME = "FRM">
+  First Number: <INPUT TYPE = "TEXT" NAME = "FIRST"> <BR>
+    Second Number: <INPUT TYPE = "TEXT" NAME = "SECOND"> <BR>
+      <INPUT TYPE = "BUTTON" VALUE = "Addition" ONCLICK = "addition()"> <BR>
+        Result: <INPUT NAME = "RESULT">
+        </FORM>
+      </HTML>

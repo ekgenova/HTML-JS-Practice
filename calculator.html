@@ -1,0 +1,107 @@
+<html>
+<form name="form">
+  <table>
+    <tr>
+      <th colspan="4">
+        <input name="result" />
+      </th>
+    </tr>
+    <tr>
+      <td><input type="button" value="7" onclick="inputSeven()" /></td>
+      <td><input type="button" value="8" onclick="inputEight()" /></td>
+      <td><input type="button" value="9" onclick="inputNine()" /></td>
+      <td><input type="button" value="÷" onclick="divide()" /></td>
+    </tr>
+    <tr>
+      <td><input type="button" value="4" onclick="inputFour()" /></td>
+      <td><input type="button" value="5" onclick="inputFive()" /></td>
+      <td><input type="button" value="6" onclick="inputSix()" /></td>
+      <td><input type="button" value="x" onclick="multiply()" /></td>
+    </tr>
+    <tr>
+      <td><input type="button" value="1" onclick="inputOne()" /></td>
+      <td><input type="button" value="2" onclick="inputTwo()" /></td>
+      <td><input type="button" value="3" onclick="inputThree()" /></td>
+      <td><input type="button" value="−" onclick="subtract()" /></td>
+    </tr>
+    <tr>
+      <td><input type="button" value="0" onclick="inputZero()" /></td>
+      <td><input type="button" value="=" onclick="equals()" /></td>
+      <td><input type="button" value="c" onclick="clear()" /></td>
+      <td><input type="button" value="+" onclick="add()" /></td>
+    </tr>
+  </table>
+</form>
+
+<script>
+function inputOne(){
+  var output = window.document.form.result.value;
+  output+="1";
+  window.document.form.result.value = output;
+}
+function inputTwo(){
+  var output = window.document.form.result.value;
+  output+="2";
+  window.document.form.result.value = output;
+}
+function inputThree(){
+  var output = window.document.form.result.value;
+  output+="3";
+  window.document.form.result.value = output;
+}
+function inputFour(){
+  var output = window.document.form.result.value;
+  output+="4";
+  window.document.form.result.value = output;
+}
+function inputFive(){
+  var output = window.document.form.result.value;
+  output+="5";
+  window.document.form.result.value = output;
+}
+function inputSix(){
+  var output = window.document.form.result.value;
+  output+="6";
+  window.document.form.result.value = output;
+}
+function inputSeven(){
+  var output = window.document.form.result.value;
+  output+="7";
+  window.document.form.result.value = output;
+}
+function inputEight(){
+  var output = window.document.form.result.value;
+  output+="8";
+  window.document.form.result.value = output;
+}
+function inputNine(){
+  var output = window.document.form.result.value;
+  output+="9";
+  window.document.form.result.value = output;
+}
+function inputZero(){
+  var output = window.document.form.result.value;
+  output+="0";
+  window.document.form.result.value = output;
+}
+
+function divide(){
+
+}
+function multiply(){
+
+}
+function subtract(){
+
+}
+function add(){
+
+}
+function clear(){
+  window.document.form.result.value='';
+}
+function equals(){
+
+}
+</script>
+</html>

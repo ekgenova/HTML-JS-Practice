@@ -1,0 +1,71 @@
+<HTML>
+  <SCRIPT>
+
+  function calculate(){
+    <!-- initialization of variables-->
+    var fifties = 0;
+    var twenties = 0;
+    var tens = 0;
+    var fives = 0;
+    var twos = 0;
+    var ones = 0;
+
+    <!-- amount to be paid received from getInput-->
+    var amount = getInput();
+
+    <!-- loop until amount is broken down to 0-->
+    while (amount != 0){
+      if (amount >= 50){
+        amount = amount - 50;
+        fifties ++;
+      }
+      else if (amount >=20){
+        amount = amount - 20;
+        twenties++;
+      }
+      else if (amount >=10){
+        amount = amount - 10;
+        tens++;
+      }
+      else if (amount >=5){
+        amount = amount - 5;
+        fives++;
+      }
+      else if (amount >=2){
+        amount = amount - 2;
+        twos++;
+      }
+      else if (amount ==1){
+        amount = amount - 1;
+        ones++;
+      }
+    }
+
+    <!-- output on text boxes -->
+    window.document.form.fifty.value = fifties;
+    window.document.form.twenty.value = twenties;
+    window.document.form.ten.value = tens;
+    window.document.form.five.value = fives;
+    window.document.form.two.value = twos;
+    window.document.form.one.value = ones;
+  }
+
+  function getInput(){
+    var bill = parseInt(window.document.form.bill.value);
+    var paid = parseInt(window.document.form.paid.value);
+    return paid - bill;
+  }
+
+</SCRIPT>
+<FORM NAME = "form">
+  Bill: <INPUT NAME = "bill"> <BR>
+    Paid amount: <INPUT NAME = "paid"> <BR>
+      <INPUT TYPE = "BUTTON" NAME = "calc" VALUE = "Calculate" ONCLICK = "calculate()"> <BR>
+        <BR>
+          £50 notes: <INPUT NAME = "fifty"> <BR>
+            £20 notes: <INPUT NAME = "twenty"> <BR>
+              £10 notes: <INPUT NAME = "ten"> <BR>
+                £5 notes: <INPUT NAME = "five"> <BR>
+                  £2 coins: <INPUT NAME = "two"> <BR>
+                    £1 coins: <INPUT NAME = "one">
+                    </FORM>

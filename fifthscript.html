@@ -1,0 +1,17 @@
+<HTML>
+	<SCRIPT>
+	function add(){
+		var no1 = parseInt(window.document.F.A.value);
+		var no2 = parseInt(window.document.F.B.value);
+		var result = no1 + no2;
+		window.document.F.C.value = result;}
+	</SCRIPT>
+	<FORM NAME = "F">
+		<INPUT NAME = "A">
+			<INPUT NAME = "B">
+				<INPUT NAME = "C">
+					<INPUT TYPE = "BUTTON"
+					VALUE = "CLICK ME" ONCLICK = "add()">
+				</INPUT>
+			</FORM>
+		</HTML>

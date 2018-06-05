@@ -1,0 +1,21 @@
+<html>
+<script>
+function increase(){
+  var number = parseInt(window.document.form.number.value);
+  number+=1;
+  window.document.form.number.value=number;
+}
+
+function decrease(){
+  var number = parseInt(window.document.form.number.value);
+  number-=1;
+  window.document.form.number.value=number;
+}
+</script>
+
+<form name="form">
+  <input name="number" value="0" /><br />
+  <input type="button" name="increaseButton" value="Increase" onmousemove="increase()" />
+  <input type="button" name="decreaseButton" value="Decrease" onmousemove="decrease()" />
+</form>
+</html>
