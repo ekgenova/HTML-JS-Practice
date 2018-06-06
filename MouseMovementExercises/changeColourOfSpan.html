@@ -1,0 +1,33 @@
+<html>
+<script>
+function moveIt(){
+  var s = window.document.getElementById("a");
+  s.style.top = window.event.clientY;
+  s.style.left = window.event.clientX;
+}
+
+function changeColor(col){
+  var s = window.document.getElementById("a");
+  s.style.color = col;
+}
+</script>
+<body onmousemove="moveIt()">
+  <span id="a" style= "position:absolute;top:0;left:0;z-index:2">QA Consulting</span>
+  <span id="red"
+  style= "position:absolute;top:100;left:100;width:100px;height:100px;background-color:#ff4c4c;text-align:center;line-height:100px;color:#ffffff;"
+  onmouseenter="changeColor('#ff4c4c')">
+  RED</span>
+  <span id="green"
+  style= "position:absolute;top:500;left:100;width:100px;height:100px;background-color:#179818;text-align:center;line-height:100px;color:#ffffff;"
+  onmouseenter="changeColor('#179818')">
+  GREEN</span>
+  <span id="blue"
+  style= "position:absolute;top:500;left:500;width:100px;height:100px;background-color:#1935ab;text-align:center;line-height:100px;color:#ffffff;"
+  onmouseenter="changeColor('#1935ab')">
+  BLUE</span>
+  <span id="yellow"
+  style= "position:absolute;top:100;left:500;width:100px;height:100px;background-color:#c1af3c;text-align:center;line-height:100px;color:#ffffff;"
+  onmouseenter="changeColor('#c1af3c')">
+  YELLOW</span>
+</body>
+</html>

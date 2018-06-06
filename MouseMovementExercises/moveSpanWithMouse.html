@@ -1,0 +1,12 @@
+<html>
+<script>
+function moveIt(){
+  var s = window.document.getElementById("a");
+  s.style.top = window.event.clientY;
+  s.style.left = window.event.clientX;
+}
+</script>
+<body onmousemove="moveIt()">
+  <span id="a" style= "position:absolute;top:0;left:0">QA Consulting</span>
+</body>
+</html>

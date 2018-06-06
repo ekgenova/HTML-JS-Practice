@@ -1,0 +1,113 @@
+<html>
+<form name="form">
+  <table>
+    <tr>
+      <th colspan="4">
+        <input name="result" />
+      </th>
+    </tr>
+    <tr>
+      <td><input type="button" value="7" onclick="inputNumber(7)" /></td>
+      <td><input type="button" value="8" onclick="inputNumber(8)" /></td>
+      <td><input type="button" value="9" onclick="inputNumber(9)" /></td>
+      <td><input type="button" value="÷" onclick="sendOperation(4)" /></td>
+    </tr>
+    <tr>
+      <td><input type="button" value="4" onclick="inputNumber(4)" /></td>
+      <td><input type="button" value="5" onclick="inputNumber(5)" /></td>
+      <td><input type="button" value="6" onclick="inputNumber(6)" /></td>
+      <td><input type="button" value="x" onclick="sendOperation(3)" /></td>
+    </tr>
+    <tr>
+      <td><input type="button" value="1" onclick="inputNumber(1)" /></td>
+      <td><input type="button" value="2" onclick="inputNumber(2)" /></td>
+      <td><input type="button" value="3" onclick="inputNumber(3)" /></td>
+      <td><input type="button" value="−" onclick="sendOperation(2)" /></td>
+    </tr>
+    <tr>
+      <td><input type="button" value="0" onclick="inputNumber(0)" /></td>
+      <td><input type="button" value="=" onclick="equals()" /></td>
+      <td><input type="button" value="c" onclick="clean()" /></td>
+      <td><input type="button" value="+" onclick="sendOperation(1)" /></td>
+    </tr>
+  </table>
+</form>
+<script>
+
+var newNumber = true;
+var hasNumber = false;
+var firstNumber = null;
+var lastNumber = null;
+var result = null;
+var operation = 0;
+var opCount = 0;
+
+function inputNumber(num){
+  (newNumber)? window.document.form.result.value = num: window.document.form.result.value += num;
+  newNumber = false;
+  hasNumber = true;
+}
+
+function sendOperation(op){
+  if (opCount > 1){
+    firstNumber = result;
+    (hasNumber)? lastNumber = parseFloat(window.document.form.result.value): lastNumber = 0;
+    newNumber = true;
+    hasNumber = false;
+    result = calculate();
+    window.document.form.result.value = result;
+    operation = op;
+  }
+  if (opCount == 1){
+    (hasNumber)? lastNumber = parseFloat(window.document.form.result.value): lastNumber = 0;
+    newNumber = true;
+    hasNumber = false;
+    result = calculate();
+    window.document.form.result.value = result;
+    opCount++;
+    operation = op
+  } if (opCount == 0){
+    (hasNumber)? firstNumber = parseFloat(window.document.form.result.value): firstNumber =0;
+    newNumber = true;
+    hasNumber = false;
+    operation = op;
+    clean();
+    opCount++;
+  }
+}
+
+function calculate(){
+  if (operation=="1"){
+    //Addition
+    return firstNumber+lastNumber;
+  }
+  if (operation=="2"){
+    //Subtraction
+    return firstNumber-lastNumber;
+  }
+  if (operation=="3"){
+    //Multiplication
+    return firstNumber*lastNumber;
+  }
+  if (operation=="4"){
+    //Division
+    return firstNumber/lastNumber;
+  }
+
+
+}
+function clean(){
+  window.document.form.result.value="";
+  opCount = 0;
+}
+function equals(){
+  if (opCount > 0){
+    result = calculate();
+    window.document.form.result.value = result;
+    opCount = 0;
+    operati
+    on = 0;
+  }
+}
+</script>
+</html>

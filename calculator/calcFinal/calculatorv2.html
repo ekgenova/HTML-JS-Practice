@@ -1,0 +1,68 @@
+<html>
+
+<head>
+<link href="calc.css" rel="stylesheet" />
+</head>
+
+<body>
+<form name="form">
+  <table>
+    <tr>
+      <th colspan="4">
+        <input class="textbox" id="result" />
+      </th>
+    </tr>
+    <tr>
+      <td><input class="button" type="button" value="7" onclick="inputNumber(7)" /></td>
+      <td><input class="button" type="button" value="8" onclick="inputNumber(8)" /></td>
+      <td><input class="button" type="button" value="9" onclick="inputNumber(9)" /></td>
+      <td><input class="button" type="button" value="÷" onclick="inputOperator('/')" /></td>
+    </tr>
+    <tr>
+      <td><input class="button" type="button" value="4" onclick="inputNumber(4)" /></td>
+      <td><input class="button" type="button" value="5" onclick="inputNumber(5)" /></td>
+      <td><input class="button" type="button" value="6" onclick="inputNumber(6)" /></td>
+      <td><input class="button" type="button" value="x" onclick="inputOperator('*')" /></td>
+    </tr>
+    <tr>
+      <td><input class="button" type="button" value="1" onclick="inputNumber(1)" /></td>
+      <td><input class="button" type="button" value="2" onclick="inputNumber(2)" /></td>
+      <td><input class="button" type="button" value="3" onclick="inputNumber(3)" /></td>
+      <td><input class="button" type="button" value="−" onclick="inputOperator('-')" /></td>
+    </tr>
+    <tr>
+      <td><input class="button" type="button" value="0" onclick="inputNumber(0)" /></td>
+      <td><input class="equal" type="button" value="=" onclick="equals()" /></td>
+      <td><input class="button" type="button" value="." onclick="inputOperator('.')" /></td>
+      <td><input class="button" type="button" value="+" onclick="inputOperator('+')" /></td>
+    </tr>
+    <tr>
+      <th colspan="2" ><input class="reset" type="button" value="Clear" onclick="clean()" /></th>
+    </tr>
+  </table>
+</form>
+</body>
+<script>
+var output = window.document.form.result;
+function inputNumber(num){
+  output.value += num;
+}
+
+function inputOperator(op){
+  output.value += op;
+}
+
+function clean(){
+  output.value="";
+}
+function equals(){
+  var expression = output.value;
+  if (expression) {
+    output.value = eval(output.value).toFixed(2);
+  }
+  else {
+    window.alert("The field is empty!");
+  }
+}
+</script>
+</html>
