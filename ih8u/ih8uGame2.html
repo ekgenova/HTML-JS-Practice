@@ -1,0 +1,50 @@
+<html>
+
+<body onkeydown="actionperformed()" onload="pick()">
+  <span id="fire" style= "position:absolute;visibility:visible;top:560;left:500;"><pre>   I H8 U!</pre></span>
+  <div id= "combo" style= "position:absolute;top:600px;left:500px">
+
+    <img id= "the" src="shafeeq.jpg" alt="THE Shafeeq" height="100px" width="100px" />
+  </div>
+
+  <script>
+  var topM = 560;
+  var leftM = 500;
+  var combo = window.document.getElementById("combo");
+  var timer;
+  var fire5;
+  var box5;
+
+  function pick(){
+    fire5=document.getElementById("fire");
+    box5=document.getElementById("the");
+  }
+  function fire(){
+    createElement()
+    topM-=100;
+    console.log(topM);
+    document.getElementById("fire").style.visibility="visible";
+    document.getElementById("fire").style.top=topM;
+    if (topM<=10){
+      window.clearInterval(timer);
+    }
+    fire5="";
+  }
+  function actionperformed(){
+    if (event.keyCode==39){
+      leftM+=10;
+    }
+    else if (event.keyCode==37){
+      leftM-=10;
+    }
+    else if (event.keyCode==32){
+      timer=window.setInterval(fire, 500);
+    }
+    combo.style.left=leftM;
+    if (fire5!=""){
+      fire5.style.left=leftM;}
+      box5.style.left=leftM;
+    }
+    </script>
+  </body>
+  </html>

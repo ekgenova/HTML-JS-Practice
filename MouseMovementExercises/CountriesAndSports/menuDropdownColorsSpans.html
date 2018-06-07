@@ -1,0 +1,72 @@
+<html>
+<body>
+  <span id = "countries" style = "position:absolute;top:20;left:20;border-style:solid;border-width:1px" onmouseenter = "showElement('menu1')" onmouseleave = "hideElement('menu1')">Countries</span><br />
+  <span id = "menu1" style = "visibility:hidden" onmouseenter = "showElement('menu1')" onmouseleave = "hideElement('menu1')">
+    <div id = "uk"
+    style = "position:absolute;top:40;left:20;border-style:solid;border-width:1px;width:100px" onmouseenter = "changeColorB(this)" onmouseleave = "changeColorW(this)" onclick="showInfo('ukinfo')">United Kingdom</div><br />
+    <div id = "usa" style = "width:100px;position:absolute;top:78;left:20;border-style:solid;border-width:1px" onmouseenter = "changeColorB(this)" onmouseleave = "changeColorW(this)" onclick="showInfo('usainfo')">USA</div><br />
+    <div id = "spain" style = "width:100px;position:absolute;top:98;left:20;border-style:solid;border-width:1px" onmouseenter = "changeColorB(this)" onmouseleave = "changeColorW(this)" onclick="showInfo('spaininfo')">Spain</div>
+  </span>
+  <span id = "sports" style = "position:absolute;top:20;left:100;border-style:solid;border-width:1px" onmouseenter = "showElement('menu2')" onmouseleave = "hideElement('menu2')">Sports</span><br />
+  <span id = "menu2" style = "visibility:hidden" onmouseenter = "showElement('menu2')" onmouseleave = "hideElement('menu2')">
+    <div id = "football" style = "position:absolute;top:40;left:100;border-style:solid;border-width:1px;width:70px" onmouseenter = "changeColorB(this)" onmouseleave = "changeColorW(this)">Football</div><br />
+    <div id = "cricket" style = "position:absolute;top:60;left:100;border-style:solid;border-width:1px;width:70px" onmouseenter = "changeColorB(this)" onmouseleave = "changeColorW(this)">Cricket</div><br />
+    <div id = "tennis" style = "position:absolute;top:80;left:100;border-style:solid;border-width:1px;width:70px" onmouseenter = "changeColorB(this)" onmouseleave = "changeColorW(this)">Tennis</div><br />
+    <div id = "football" style = "position:absolute;top:100;left:100;border-style:solid;border-width:1px;width:70px" onmouseenter = "changeColorB(this)" onmouseleave = "changeColorW(this)">Basketball</div><br />
+  </span>
+  <div id = "ukinfo" style = "width:800px; position:absolute;top:200px;left:50px;visibility:hidden">
+    <div style = "width:600px;position:absolute;top:0px;left:0px">
+      <span>The UK is a developed country and has the world's fifth-largest economy by nominal GDP and ninth-largest economy by purchasing power parity. It has a high-income economy and has a "very high" Human Development Index, ranking 16th in the world. It was the first industrialised country and the world's foremost power during the 19th and early 20th centuries.The UK remains a great power with considerable economic, cultural, military, scientific and political influence internationally. It is a recognised nuclear weapons state and is sixth in military expenditure in the world.</span>
+      <img src = "uk-flag.jpg" alt="UK flag" height = "100" width="150" style= "position:absolute;top:0;left:600" />
+    </div>
+  </div>
+  <div id = "usainfo" style = "width:800px; position:absolute;top:200px;left:50px;visibility:hidden">
+    <div style = "width:600px;position:absolute;top:0px;left:0px">
+      <span>The United States of America (USA), commonly known as the United States (U.S.) or America, is a federal republic composed of 50 states, a federal district, five major self-governing territories, and various possessions. At 3.8 million square miles (9.8 million km2) and with over 325 million people, the United States is the world's third- or fourth-largest country by total area and the third-most populous country.</span>
+      <img src = "usa-flag.jpg" alt="USA flag" height = "100" width="150" style= "position:absolute;top:0;left:600" />
+    </div>
+  </div>
+  <div id = "spaininfo" style = "width:800px; position:absolute;top:200px;left:50px;visibility:hidden">
+    <div style = "width:600px;position:absolute;top:0px;left:0px">
+      <span>Spain , officially the Kingdom of Spain , is a sovereign state mostly located on the Iberian Peninsula in Europe. With an area of 505,990 km2 (195,360 sq mi), Spain is the largest country in Southern Europe, the second largest country in Western Europe and the European Union, and the fourth largest country in the European continent. By population, Spain is the sixth largest in Europe and the fifth in the European Union. Spain's capital and largest city is Madrid; other major urban areas include Barcelona, Valencia, Seville, Málaga and Bilbao.</span>
+      <img src = "spain-flag.gif" alt="USA flag" height = "100" width="150" style= "position:absolute;top:0;left:600" />
+    </div>  </div>
+
+
+    <script>
+    var shown = null;
+    var showing = false;
+
+    function showElement(menu){
+      document.getElementById(menu).style.visibility = "visible";
+    }
+    function showInfo(info){
+      var toShow = document.getElementById(info);
+      if (showing){
+        if (shown != toShow){
+          shown.style.visibility = "hidden";
+          toShow.style.visibility = "visible";
+          shown = toShow;
+        } else {
+          shown.style.visibility = "hidden";
+          showing = false;
+        }
+      }
+      else{
+        toShow.style.visibility = "visible";
+        shown = toShow;
+        showing = true;
+      }
+    }
+    function hideElement(menu){
+      document.getElementById(menu).style.visibility = "hidden";
+    }
+    function changeColorB(obj){
+      obj.style.backgroundColor = '#3366ff';
+    }
+    function changeColorW(obj){
+      obj.style.backgroundColor = '#ffffff';
+    }
+    </script>
+  </body>
+  </html>

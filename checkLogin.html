@@ -1,0 +1,25 @@
+<html>
+<body>
+  <form action="checked.html" onsubmit="return checkLogin()">
+    <span>Username:</span><br />
+    <input type= "text" name = "username" id= "u" /><br />
+    <span>Password:</span><br />
+    <input type= "password" name = "password" id= "p" /><br />
+    <input type= "submit" value = "Log-in" />
+  </form>
+
+  <script>
+  function checkLogin(){
+    if (document.getElementById("u").value==""){
+      window.alert("Username is empty!");
+      document.getElementById("u").focus();
+      return false;
+    } else if (document.getElementById("p").value==""){
+      window.alert("Password is empty!");
+      document.getElementById("p").focus();
+      return false;
+    }
+  }
+  </script>
+</body>
+</html>
