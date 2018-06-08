@@ -1,0 +1,22 @@
+<html>
+<script>
+var fSize = 12;
+
+function mmove(){
+
+  if (window.event.ctrlKey){
+    fSize++;
+  }
+  if (window.event.altKey){
+    fSize--;
+  }
+  var s = window.document.getElementById("a");
+  s.style.top = window.event.clientY;
+  s.style.left = window.event.clientX;
+  s.style.fontSize = fSize;
+}
+</script>
+<body onmousemove="mmove()">
+  <span id="a" style= "position:absolute;top:0;left:0">QA Consulting</span>
+</body>
+</html>
